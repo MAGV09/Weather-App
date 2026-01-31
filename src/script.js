@@ -1,7 +1,7 @@
 import 'modern-normalize/modern-normalize.css';
 import './styles/reset.css';
 import './styles/style.css';
-
+import { getCurrentTempValues, renderWeeklyTemp } from './dom';
 async function getTemp(location, unit) {
   try {
     const response = await fetch(
@@ -9,6 +9,17 @@ async function getTemp(location, unit) {
     );
     const weather = await response.json();
     console.log(weather);
+    const { currentConditions, days } = weather;
+
+    const date = new Date();
+    const day = date.toLocaleDateString('en-US', { weekday: 'long' });
+    const time = date.toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      hour12: true,
+    });
+
+    getCurrentTempValues(currentConditions, unit, day, time);
+    renderWeeklyTemp(days);
   } catch (error) {
     console.log(error);
   }
