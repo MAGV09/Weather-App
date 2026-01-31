@@ -30,7 +30,7 @@ button {
 }
 
 img {
-  display: block;
+  /* display: block; */
   max-inline-size: 100%;
 }
 body {
