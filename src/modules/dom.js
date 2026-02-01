@@ -59,7 +59,6 @@ function renderWeeklyTemp(days) {
     if (!(i <= 6)) {
       return;
     }
-    //missing icon
     const { tempmax, tempmin, datetime, icon } = day;
     const date = new Date(`${datetime}T12:00:00`).toLocaleDateString('en-US', {
       weekday: 'short',

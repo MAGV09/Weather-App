@@ -1,3 +1,7 @@
+body {
+  background: linear-gradient(135deg, #0093e9 0%, #80d0c7 100%);
+  min-height: 100vh;
+}
 .hero {
   display: grid;
   grid-template-rows: 4.5rem 1fr;
@@ -10,11 +14,14 @@
 }
 .title {
   font-size: 2rem;
-  color: aliceblue;
+  color: #ffffff;
 }
 form {
   justify-self: center;
   margin-bottom: 2rem;
+  position: absolute;
+  top: 12px;
+  right: 10px;
 }
 input {
   padding: 0.5rem;
@@ -22,8 +29,8 @@ input {
 button {
   width: 100px;
   height: 25px;
-  background-color: rgba(20, 20, 20, 0.9);
-  color: aliceblue;
+  background-color: #e0f7fa;
+  color: black;
   border-radius: 5px;
 }
 .header {
@@ -31,11 +38,12 @@ button {
 }
 .main {
   justify-self: center;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .temp-container {
-  border: 1px solid grey;
   width: 50rem;
   padding: 1rem;
+  color: #ffffff;
 }
 .current-temp {
   display: grid;

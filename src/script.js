@@ -12,7 +12,6 @@ async function getTemp(location, unit) {
       throw new Error("Couldn't find the location");
     }
     const weather = await response.json();
-    console.log(weather);
     const { currentConditions, days } = weather;
 
     renderCurrentTempValues(currentConditions, unit);
@@ -21,6 +20,7 @@ async function getTemp(location, unit) {
     console.error(error);
   }
 }
+//initial load
 getTemp('London', 'metric');
 
 const form = document.querySelector('#form');
@@ -28,7 +28,6 @@ const location = document.querySelector('#location');
 const unit = document.querySelector('#unit');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  // console.log(location.value, unit.value);
   const unitMappedValue = unit.value.toLowerCase() === 'celsius' ? 'metric' : 'us';
   getTemp(location.value, unitMappedValue);
 });
