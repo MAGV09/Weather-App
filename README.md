@@ -5,11 +5,11 @@ A modern, responsive weather application built with vanilla JavaScript, featurin
 
 ##  Features
 
-- 🌍 **Global Weather Data** - Search for weather information by city or country
-- 🌡️ **Real-time Temperature** - Get current temperature and weather conditions
-- 🎨 **Dynamic Weather Icons** - Beautiful SVG icons from Meteocons that change based on weather conditions
-- 🎭 **Gradient Background** - Eye-catching linear gradient design
-- 📱 **Responsive Design** - Works seamlessly on desktop and mobile devices
+-  **Global Weather Data** - Search for weather information by city or country
+-  **Real-time Temperature** - Get current temperature and weather conditions
+-  **Dynamic Weather Icons** - Beautiful SVG icons from Meteocons that change based on weather conditions
+-  **Gradient Background** - Eye-catching linear gradient design
+-  **Responsive Design** - Works seamlessly on desktop and mobile devices
 - ⚡ **Fast & Optimized** - Built with Webpack for optimal performance
 
 ## Demo
