@@ -59,7 +59,7 @@ button {
   grid-area: temp;
   align-self: flex-end;
 }
-.imgs {
+.left-side .icon {
   grid-area: icon;
   width: 100px;
 }
@@ -105,7 +105,7 @@ h1 + span {
 .right-side > * {
   border-bottom: 1px solid grey;
 }
-.weekly img {
+.weekly .icon {
   width: 50px;
 }
 

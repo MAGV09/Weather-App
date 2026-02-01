@@ -1,46 +1,34 @@
 import 'modern-normalize/modern-normalize.css';
 import './styles/reset.css';
 import './styles/style.css';
-import { getCurrentTempValues, renderWeeklyTemp } from './dom';
+import { renderCurrentTempValues, renderWeeklyTemp } from './modules/dom';
+
 async function getTemp(location, unit) {
   try {
     const response = await fetch(
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unit}&include=days%2Ccurrent%2Calerts&key=7TJFYQFH929XUG52Y9GHDZF92&contentType=json`,
     );
+    if (!response.ok) {
+      throw new Error("Couldn't find the location");
+    }
     const weather = await response.json();
     console.log(weather);
     const { currentConditions, days } = weather;
 
-    const date = new Date();
-    const day = date.toLocaleDateString('en-US', { weekday: 'long' });
-    const time = date.toLocaleTimeString('en-US', {
-      hour: 'numeric',
-      hour12: true,
-    });
-
-    getCurrentTempValues(currentConditions, unit, day, time);
+    renderCurrentTempValues(currentConditions, unit);
     renderWeeklyTemp(days);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
-getTemp('ismailia', 'metric');
+getTemp('London', 'metric');
 
-//current
-/*
- temp
- feels like
- wind
- humdidity
- condition
- time
- day
- icon
- */
-
-//week
-/*
- min/max temp
- icon
- day
- */
+const form = document.querySelector('#form');
+const location = document.querySelector('#location');
+const unit = document.querySelector('#unit');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  // console.log(location.value, unit.value);
+  const unitMappedValue = unit.value.toLowerCase() === 'celsius' ? 'metric' : 'us';
+  getTemp(location.value, unitMappedValue);
+});

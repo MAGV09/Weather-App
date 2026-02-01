@@ -11,9 +11,16 @@
         <div class="title">Weather</div>
       </header>
       <main class="main">
-        <form>
-          <input type="search" name="search" placeholder="Location" id="location" required />
-          <select id="select" required>
+        <form id="form">
+          <input
+            type="search"
+            name="search"
+            placeholder="Location"
+            id="location"
+            required
+            value="London"
+          />
+          <select id="unit" required>
             <option value="celsius" selected>Celsius</option>
             <option value="fahrenheit">Fahrenheit</option>
           </select>
@@ -22,11 +29,8 @@
         <div class="temp-container">
           <div class="current-temp">
             <div class="left-side">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8y2R7yJmlG8BcwZ8XeYj1YioavB-oeqKv-g&s"
-                alt="weather icon"
-                class="imgs"
-              />
+              <div class="icon" id="icon-el"></div>
+
               <div class="icon-container">
                 <div class="temp">
                   <h1 id="current-temp-el">11</h1>
