@@ -14,7 +14,7 @@ A modern, responsive weather application built with vanilla JavaScript, featurin
 
 ## Demo
 
-[Live Demo]: https://magv09.github.io/Weather-App/
+live preview: https://magv09.github.io/Weather-App/
 
 
 
